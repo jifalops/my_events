@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Setting this to true means our model classes marked with `@JsonSerializable()`
+          # will have `toJson()` called on them instead of `toString()` during serialization.
+          # Without this, nested model classes may not work correctly.
+          # See https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
+          explicit_to_json: true
