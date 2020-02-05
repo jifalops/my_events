@@ -4,6 +4,7 @@ import 'package:my_events/models/profiles.dart';
 part 'events.g.dart';
 
 /// An awesome event you should probably attend.
+@JsonSerializable()
 class Event {
   const Event({
     this.id,
