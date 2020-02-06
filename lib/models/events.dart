@@ -11,12 +11,16 @@ class Event {
     this.title,
     this.start,
     this.attendees,
+    this.creator,
   });
 
   final String id;
   final String title;
   final DateTime start;
   final List<ProfileRef> attendees;
+  final ProfileRef creator;
+
+  EventRef get ref => EventRef(id: id, title: title, start: start);
 
   factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
   Map<String, dynamic> toJson() => _$EventToJson(this);
@@ -28,11 +32,14 @@ class EventRef {
   const EventRef({
     this.id,
     this.title,
+    this.start,
   });
 
   final String id;
   final String title;
+  final DateTime start;
 
-  factory EventRef.fromJson(Map<String, dynamic> json) => _$EventRefFromJson(json);
+  factory EventRef.fromJson(Map<String, dynamic> json) =>
+      _$EventRefFromJson(json);
   Map<String, dynamic> toJson() => _$EventRefToJson(this);
 }

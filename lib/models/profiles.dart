@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:my_events/models/events.dart';
 
@@ -18,7 +19,8 @@ class Profile {
   final String photoUrl;
   final List<EventRef> events;
 
-  factory Profile.fromJson(Map<String, dynamic> json) => _$ProfileFromJson(json);
+  factory Profile.fromJson(Map<String, dynamic> json) =>
+      _$ProfileFromJson(json);
   Map<String, dynamic> toJson() => _$ProfileToJson(this);
 }
 
@@ -31,10 +33,17 @@ class ProfileRef {
     this.photoUrl,
   });
 
+  /// This is a named constructor, it is a way of offering multiple constructors.
+  ProfileRef.fromUser(FirebaseUser user)
+      : id = user.uid,
+        displayName = user.displayName,
+        photoUrl = user.photoUrl;
+
   final String id;
   final String displayName;
   final String photoUrl;
 
-  factory ProfileRef.fromJson(Map<String, dynamic> json) => _$ProfileRefFromJson(json);
+  factory ProfileRef.fromJson(Map<String, dynamic> json) =>
+      _$ProfileRefFromJson(json);
   Map<String, dynamic> toJson() => _$ProfileRefToJson(this);
 }
