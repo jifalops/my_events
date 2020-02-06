@@ -19,6 +19,13 @@ class ProfileController {
       .stream('profiles/$id')
       .map((data) => data == null ? null : Profile.fromJson(data..['id'] = id));
 
+  Stream<Map<String, Profile>> streamAllProfiles() =>
+      db.stream('profiles').map((data) {
+        if (data == null) return null;
+        return data.map((id, profileData) =>
+            MapEntry(id, Profile.fromJson(profileData..['id'] = id)));
+      });
+
   Future<void> updateDisplayName(String id, String displayName) =>
       db.update('profiles/$id', {'displayName': displayName});
   Future<void> updatePhotoUrl(String id, String photoUrl) =>

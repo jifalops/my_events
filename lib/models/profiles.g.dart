@@ -11,10 +11,10 @@ Profile _$ProfileFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     displayName: json['displayName'] as String,
     photoUrl: json['photoUrl'] as String,
-    events: (json['events'] as List)
-        ?.map((e) =>
-            e == null ? null : EventRef.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    events: (json['events'] as Map<String, dynamic>)?.map(
+      (k, e) => MapEntry(k,
+          e == null ? null : ProfileEvent.fromJson(e as Map<String, dynamic>)),
+    ),
   );
 }
 
@@ -22,20 +22,20 @@ Map<String, dynamic> _$ProfileToJson(Profile instance) => <String, dynamic>{
       'id': instance.id,
       'displayName': instance.displayName,
       'photoUrl': instance.photoUrl,
-      'events': instance.events?.map((e) => e?.toJson())?.toList(),
+      'events': instance.events?.map((k, e) => MapEntry(k, e?.toJson())),
     };
 
-ProfileRef _$ProfileRefFromJson(Map<String, dynamic> json) {
-  return ProfileRef(
+ProfileEvent _$ProfileEventFromJson(Map<String, dynamic> json) {
+  return ProfileEvent(
     id: json['id'] as String,
-    displayName: json['displayName'] as String,
-    photoUrl: json['photoUrl'] as String,
+    title: json['title'] as String,
+    start: Database.parseTimestamp(json['start']),
   );
 }
 
-Map<String, dynamic> _$ProfileRefToJson(ProfileRef instance) =>
+Map<String, dynamic> _$ProfileEventToJson(ProfileEvent instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'displayName': instance.displayName,
-      'photoUrl': instance.photoUrl,
+      'title': instance.title,
+      'start': instance.start?.toIso8601String(),
     };

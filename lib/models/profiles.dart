@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:my_events/firebase_helpers/database.dart';
 import 'package:my_events/models/events.dart';
 
 part 'profiles.g.dart';
@@ -17,33 +17,29 @@ class Profile {
   final String id;
   final String displayName;
   final String photoUrl;
-  final List<EventRef> events;
+  final Map<String, ProfileEvent> events;
 
   factory Profile.fromJson(Map<String, dynamic> json) =>
       _$ProfileFromJson(json);
   Map<String, dynamic> toJson() => _$ProfileToJson(this);
 }
 
-/// Refers to a user's profile, e.g. for displaying in a list.
+/// Refers to an event, e.g. for displaying in a list.
 @JsonSerializable()
-class ProfileRef {
-  const ProfileRef({
+class ProfileEvent {
+  const ProfileEvent({
     this.id,
-    this.displayName,
-    this.photoUrl,
+    this.title,
+    this.start,
   });
 
-  /// This is a named constructor, it is a way of offering multiple constructors.
-  ProfileRef.fromUser(FirebaseUser user)
-      : id = user.uid,
-        displayName = user.displayName,
-        photoUrl = user.photoUrl;
-
   final String id;
-  final String displayName;
-  final String photoUrl;
+  final String title;
 
-  factory ProfileRef.fromJson(Map<String, dynamic> json) =>
-      _$ProfileRefFromJson(json);
-  Map<String, dynamic> toJson() => _$ProfileRefToJson(this);
+  @JsonKey(fromJson: Database.parseTimestamp)
+  final DateTime start;
+
+  factory ProfileEvent.fromJson(Map<String, dynamic> json) =>
+      _$ProfileEventFromJson(json);
+  Map<String, dynamic> toJson() => _$ProfileEventToJson(this);
 }

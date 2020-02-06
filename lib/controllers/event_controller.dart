@@ -6,15 +6,22 @@ import 'package:my_events/models/profiles.dart';
 class EventController {
   Future<String> create(FirebaseUser user, String title, DateTime start) async {
     final id = db.generateId('events');
-    final me = ProfileRef.fromUser(user);
-    final event =
-        Event(id: id, title: title, start: start, creator: me, attendees: [me]);
-    await db.write('events/$id', event.toJson()..remove('id'));
+    final event = Event(
+      title: title,
+      start: start,
+      creator: user.uid,
+      attendees: {
+        user.uid:
+            Attendee(displayName: user.displayName, photoUrl: user.photoUrl)
+      },
+    );
+    await db.write('events/$id',
+        event.toJson()..['attendees'][user.uid]['joined'] = db.serverTimestamp);
     await db.update('profiles/${user.uid}', {
-      'events/$id': event.ref.toJson()..remove('id'),
-      // This side effect saves time by lazily creating a user's profile in the
-      // database, rather than checking if it exists when authenticated and
-      // creating it then.
+      'events/$id': ProfileEvent(title: title, start: start).toJson(),
+      // This creates the user's profile data if it doesn't exist.
+      // This saves [programming] time over checking if they exist when
+      // authenticated and creating it then.
       'photoUrl': user.photoUrl,
       'displayName': user.displayName,
     });
@@ -29,4 +36,20 @@ class EventController {
   Stream<Event> stream(String id) => db
       .stream('events/$id')
       .map((data) => data == null ? null : Event.fromJson(data..['id'] = id));
+
+  Future<void> join(Event event, FirebaseUser user) async {
+    await db.update('events/${event.id}/attendees/${user.uid}', {
+      'displayName': user.displayName,
+      'photoUrl': user.photoUrl,
+      'joined': db.serverTimestamp,
+    });
+    await db.update('profiles/${user.uid}', {
+      'events/${event.id}':
+          ProfileEvent(title: event.title, start: event.start).toJson(),
+
+      /// This might be the first time the profile is created
+      'photoUrl': user.photoUrl,
+      'displayName': user.displayName,
+    });
+  }
 }

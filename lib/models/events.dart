@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:my_events/models/profiles.dart';
+import 'package:my_events/firebase_helpers/database.dart';
 
 part 'events.g.dart';
 
@@ -16,30 +16,35 @@ class Event {
 
   final String id;
   final String title;
-  final DateTime start;
-  final List<ProfileRef> attendees;
-  final ProfileRef creator;
 
-  EventRef get ref => EventRef(id: id, title: title, start: start);
+  @JsonKey(fromJson: Database.parseTimestamp)
+  final DateTime start;
+  final Map<String, Attendee> attendees;
+  final String creator;
 
   factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
   Map<String, dynamic> toJson() => _$EventToJson(this);
 }
 
-/// Refers to an event, e.g. for displaying in a list.
+/// Keep attendee data as part of the event to reduce queries. This approach
+/// of allowing duplicate data is common in no-SQL databases like Firebase.
 @JsonSerializable()
-class EventRef {
-  const EventRef({
+class Attendee {
+  const Attendee({
     this.id,
-    this.title,
-    this.start,
+    this.displayName,
+    this.photoUrl,
+    this.joined,
   });
 
   final String id;
-  final String title;
-  final DateTime start;
+  final String displayName;
+  final String photoUrl;
 
-  factory EventRef.fromJson(Map<String, dynamic> json) =>
-      _$EventRefFromJson(json);
-  Map<String, dynamic> toJson() => _$EventRefToJson(this);
+  @JsonKey(fromJson: Database.parseTimestamp)
+  final DateTime joined;
+
+  factory Attendee.fromJson(Map<String, dynamic> json) =>
+      _$AttendeeFromJson(json);
+  Map<String, dynamic> toJson() => _$AttendeeToJson(this);
 }
