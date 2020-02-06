@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+export 'package:firebase_auth/firebase_auth.dart';
+
 FirebaseAuth get auth => FirebaseAuth.instance;
 
 final _googleSignIn = GoogleSignIn(
@@ -25,8 +27,6 @@ Future<FirebaseUser> signInWithGoogle() async {
           print('Google sign-in succeeded.');
           return result.user;
         }
-      } else {
-        print('Failed to fetch authentication for account ${account.email}.');
       }
     }
   } catch (error) {
@@ -34,4 +34,9 @@ Future<FirebaseUser> signInWithGoogle() async {
   }
   print('Sign in failed.');
   return null;
+}
+
+Future<void> signOut() async {
+  await _googleSignIn.signOut();
+  await auth.signOut();
 }
