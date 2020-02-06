@@ -1,6 +1,7 @@
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+import 'package:my_events/controllers/database_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:my_events/controllers/auth_controller.dart';
 
@@ -74,8 +75,8 @@ class EventForm extends StatefulWidget {
 
 class _EventFormState extends State<EventForm> {
   final title = TextEditingController();
-  /// Since this field isn't final, the `EventForm` widget is stateful.
-  DateTime start;
+  final start = TextEditingController();
+  final format = DateFormat("EEE. MMM d, yyyy 'at' h:mma");
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +87,9 @@ class _EventFormState extends State<EventForm> {
           decoration: InputDecoration(labelText: 'Event title'),
         ),
         DateTimeField(
+          controller: start,
           decoration: InputDecoration(labelText: 'Start time'),
-          format: DateFormat("EEE. MMM d, yyyy 'at' h:mma"),
+          format: format,
           onShowPicker: (context, currentValue) async {
             final date = await showDatePicker(
                 context: context,
@@ -105,15 +107,25 @@ class _EventFormState extends State<EventForm> {
             }
             return currentValue;
           },
-          onChanged: (value) => start = value,
         ),
         SizedBox(height: 24),
         RaisedButton(
           child: Text('Create event'),
-          onPressed: () {
-            if (title.text.isNotEmpty && start != null) {
-              print('Creating "${title.text}" at $start');
-              // TODO
+          onPressed: () async {
+            final time = DateTimeField.tryParse(start.text, format);
+            if (title.text.isNotEmpty && time != null) {
+              print('Creating "${title.text}" at $time');
+              final id = await db.event.create(
+                  Provider.of<FirebaseUser>(context, listen: false),
+                  title.text,
+                  time);
+              print('Event $id created.');
+              setState(() {
+                title.clear();
+                start.clear();
+              });
+              Scaffold.of(context)
+                  .showSnackBar(SnackBar(content: Text('Event created!')));
             } else {
               Scaffold.of(context)
                   .showSnackBar(SnackBar(content: Text('Invalid event')));
