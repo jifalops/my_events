@@ -1,12 +1,7 @@
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
-import 'package:my_events/controllers/database_controller.dart';
-import 'package:my_events/models/profiles.dart';
 import 'package:my_events/routes.dart';
+import 'package:my_events/views/components/all_events.dart';
 import 'package:my_events/views/components/event_form.dart';
-import 'package:my_events/views/components/profile_events_view.dart';
-import 'package:my_events/views/components/users_list.dart';
 import 'package:my_events/views/screens/event_details_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:my_events/controllers/auth_controller.dart';
@@ -44,7 +39,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(title: Text(appName)),
       body: ListView(
         children: <Widget>[
-          SizedBox(height: 48),
+          SizedBox(height: 16),
 
           /// Dart 2.4ish added a few "UI as code" features, one of which is to
           /// allow `if` and `else` inside of list literals (`[]`). Before this,
@@ -70,9 +65,9 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.all(48),
                   child: EventForm(),
                 ),
-                Text('All users\' events',
+                Text('All events',
                     style: Theme.of(context).textTheme.headline),
-                UsersList(),
+                AllEvents(),
               ],
             ),
         ],

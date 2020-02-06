@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:my_events/firebase_helpers/database.dart';
-import 'package:my_events/models/events.dart';
 
 part 'profiles.g.dart';
 

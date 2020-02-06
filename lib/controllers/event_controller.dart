@@ -37,6 +37,13 @@ class EventController {
       .stream('events/$id')
       .map((data) => data == null ? null : Event.fromJson(data..['id'] = id));
 
+      Stream<Map<String, Event>> streamAllEvents() =>
+      db.stream('events').map((data) {
+        if (data == null) return null;
+        return data.map((id, eventData) =>
+            MapEntry(id, Event.fromJson(eventData..['id'] = id)));
+      });
+
   Future<void> join(Event event, FirebaseUser user) async {
     await db.update('events/${event.id}/attendees/${user.uid}', {
       'displayName': user.displayName,
