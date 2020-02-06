@@ -10,8 +10,14 @@ class EventController {
     final event =
         Event(id: id, title: title, start: start, creator: me, attendees: [me]);
     await db.write('events/$id', event.toJson()..remove('id'));
-    await db.write(
-        'profiles/${user.uid}/events/$id', event.ref.toJson()..remove('id'));
+    await db.update('profiles/${user.uid}', {
+      'events/$id': event.ref.toJson()..remove('id'),
+      // This side effect saves time by lazily creating a user's profile in the
+      // database, rather than checking if it exists when authenticated and
+      // creating it then.
+      'photoUrl': user.photoUrl,
+      'displayName': user.displayName,
+    });
     return id;
   }
 
