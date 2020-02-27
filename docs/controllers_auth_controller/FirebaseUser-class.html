@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the FirebaseUser class from the auth_controller library, for the Dart programming language.">
+  <title>FirebaseUser class - auth_controller library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">my_events</a></li>
+    <li><a href="controllers_auth_controller/controllers_auth_controller-library.html">auth_controller</a></li>
+    <li class="self-crumb">FirebaseUser class</li>
+  </ol>
+  <div class="self-name">FirebaseUser</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">my_events</a></li>
+      <li><a href="controllers_auth_controller/controllers_auth_controller-library.html">auth_controller</a></li>
+      <li class="self-crumb">FirebaseUser class</li>
+    </ol>
+    
+    <h5>auth_controller library</h5>
+    <ol>
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#classes">Classes</a></li>
+      <li><a href="controllers_auth_controller/AdditionalUserInfo-class.html">AdditionalUserInfo</a></li>
+      <li><a href="controllers_auth_controller/AuthCredential-class.html">AuthCredential</a></li>
+      <li><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></li>
+      <li><a href="controllers_auth_controller/EmailAuthProvider-class.html">EmailAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/FacebookAuthProvider-class.html">FacebookAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth-class.html">FirebaseAuth</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser-class.html">FirebaseUser</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUserMetadata-class.html">FirebaseUserMetadata</a></li>
+      <li><a href="controllers_auth_controller/GithubAuthProvider-class.html">GithubAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/GoogleAuthProvider-class.html">GoogleAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/IdTokenResult-class.html">IdTokenResult</a></li>
+      <li><a href="controllers_auth_controller/OAuthProvider-class.html">OAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/PhoneAuthProvider-class.html">PhoneAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/TwitterAuthProvider-class.html">TwitterAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/UserInfo-class.html">UserInfo</a></li>
+      <li><a href="controllers_auth_controller/UserUpdateInfo-class.html">UserUpdateInfo</a></li>
+    
+    
+    
+    
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#properties">Properties</a></li>
+      <li><a href="controllers_auth_controller/auth.html">auth</a></li>
+    
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#functions">Functions</a></li>
+      <li><a href="controllers_auth_controller/signInWithGoogle.html">signInWithGoogle</a></li>
+      <li><a href="controllers_auth_controller/signOut.html">signOut</a></li>
+    
+    
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#typedefs">Typedefs</a></li>
+      <li><a href="controllers_auth_controller/PhoneCodeAutoRetrievalTimeout.html">PhoneCodeAutoRetrievalTimeout</a></li>
+      <li><a href="controllers_auth_controller/PhoneCodeSent.html">PhoneCodeSent</a></li>
+      <li><a href="controllers_auth_controller/PhoneVerificationCompleted.html">PhoneVerificationCompleted</a></li>
+      <li><a href="controllers_auth_controller/PhoneVerificationFailed.html">PhoneVerificationFailed</a></li>
+    
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#exceptions">Exceptions</a></li>
+      <li><a href="controllers_auth_controller/AuthException-class.html">AuthException</a></li>
+    </ol>
+  </div>
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1><span class="kind-class">FirebaseUser</span> class </h1></div>
+
+    <section class="desc markdown">
+      <p>Represents a user.</p>
+    </section>
+    
+    <section>
+      <dl class="dl-horizontal">
+        <dt>Inheritance</dt>
+        <dd><ul class="gt-separated dark clazz-relationships">
+          <li><a href="dart-core/Object-class.html">Object</a></li>
+          <li><a href="controllers_auth_controller/UserInfo-class.html">UserInfo</a></li>
+          <li>FirebaseUser</li>
+        </ul></dd>
+
+
+
+
+
+      </dl>
+    </section>
+
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="isAnonymous" class="property">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/isAnonymous.html">isAnonymous</a></span>
+          <span class="signature">&#8594; <a href="dart-core/bool-class.html">bool</a></span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="isEmailVerified" class="property">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/isEmailVerified.html">isEmailVerified</a></span>
+          <span class="signature">&#8594; <a href="dart-core/bool-class.html">bool</a></span>         
+        </dt>
+        <dd>
+          Returns true if the user's email is verified.
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="metadata" class="property">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/metadata.html">metadata</a></span>
+          <span class="signature">&#8594; <a href="controllers_auth_controller/FirebaseUserMetadata-class.html">FirebaseUserMetadata</a></span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="providerData" class="property">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/providerData.html">providerData</a></span>
+          <span class="signature">&#8594; <a href="dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/UserInfo-class.html">UserInfo</a></span>&gt;</span></span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">final</div>
+</dd>
+        <dt id="displayName" class="property inherited">
+          <span class="name"><a href="controllers_auth_controller/UserInfo/displayName.html">displayName</a></span>
+          <span class="signature">&#8594; <a href="dart-core/String-class.html">String</a></span>         
+        </dt>
+        <dd class="inherited">
+          The name of the user.
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="email" class="property inherited">
+          <span class="name"><a href="controllers_auth_controller/UserInfo/email.html">email</a></span>
+          <span class="signature">&#8594; <a href="dart-core/String-class.html">String</a></span>         
+        </dt>
+        <dd class="inherited">
+          The user’s email address.
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="hashCode" class="property inherited">
+          <span class="name"><a href="dart-core/Object/hashCode.html">hashCode</a></span>
+          <span class="signature">&#8594; <a href="dart-core/int-class.html">int</a></span>         
+        </dt>
+        <dd class="inherited">
+          The hash code for this object. <a href="dart-core/Object/hashCode.html">[...]</a>
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="phoneNumber" class="property inherited">
+          <span class="name"><a href="controllers_auth_controller/UserInfo/phoneNumber.html">phoneNumber</a></span>
+          <span class="signature">&#8594; <a href="dart-core/String-class.html">String</a></span>         
+        </dt>
+        <dd class="inherited">
+          The user's phone number.
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="photoUrl" class="property inherited">
+          <span class="name"><a href="controllers_auth_controller/UserInfo/photoUrl.html">photoUrl</a></span>
+          <span class="signature">&#8594; <a href="dart-core/String-class.html">String</a></span>         
+        </dt>
+        <dd class="inherited">
+          The URL of the user’s profile photo.
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="providerId" class="property inherited">
+          <span class="name"><a href="controllers_auth_controller/UserInfo/providerId.html">providerId</a></span>
+          <span class="signature">&#8594; <a href="dart-core/String-class.html">String</a></span>         
+        </dt>
+        <dd class="inherited">
+          The provider identifier.
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="runtimeType" class="property inherited">
+          <span class="name"><a href="dart-core/Object/runtimeType.html">runtimeType</a></span>
+          <span class="signature">&#8594; <a href="dart-core/Type-class.html">Type</a></span>         
+        </dt>
+        <dd class="inherited">
+          A representation of the runtime type of the object.
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="uid" class="property inherited">
+          <span class="name"><a href="controllers_auth_controller/UserInfo/uid.html">uid</a></span>
+          <span class="signature">&#8594; <a href="dart-core/String-class.html">String</a></span>         
+        </dt>
+        <dd class="inherited">
+          The provider’s user ID for the user.
+                  <div class="features">read-only, inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="instance-methods">
+      <h2>Methods</h2>
+      <dl class="callables">
+        <dt id="delete" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/delete.html">delete</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Deletes the current user (also signs out the user). <a href="controllers_auth_controller/FirebaseUser/delete.html">[...]</a>
+                  
+</dd>
+        <dt id="getIdToken" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/getIdToken.html">getIdToken</a></span><span class="signature">(<wbr>{<span class="parameter" id="getIdToken-param-refresh"><span class="type-annotation"><a href="dart-core/bool-class.html">bool</a></span> <span class="parameter-name">refresh</span>: <span class="default-value">false</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/IdTokenResult-class.html">IdTokenResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Obtains the id token result for the current user, forcing a <code>refresh</code> if desired. <a href="controllers_auth_controller/FirebaseUser/getIdToken.html">[...]</a>
+                  
+</dd>
+        <dt id="linkWithCredential" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/linkWithCredential.html">linkWithCredential</a></span><span class="signature">(<wbr><span class="parameter" id="linkWithCredential-param-credential"><span class="type-annotation"><a href="controllers_auth_controller/AuthCredential-class.html">AuthCredential</a></span> <span class="parameter-name">credential</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Associates a user account from a third-party identity provider with this
+user and returns additional identity provider data. <a href="controllers_auth_controller/FirebaseUser/linkWithCredential.html">[...]</a>
+                  
+</dd>
+        <dt id="reauthenticateWithCredential" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/reauthenticateWithCredential.html">reauthenticateWithCredential</a></span><span class="signature">(<wbr><span class="parameter" id="reauthenticateWithCredential-param-credential"><span class="type-annotation"><a href="controllers_auth_controller/AuthCredential-class.html">AuthCredential</a></span> <span class="parameter-name">credential</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Renews the user’s authentication tokens by validating a fresh set of
+<code>credential</code>s supplied by the user and returns additional identity provider
+data. <a href="controllers_auth_controller/FirebaseUser/reauthenticateWithCredential.html">[...]</a>
+                  
+</dd>
+        <dt id="reload" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/reload.html">reload</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Manually refreshes the data of the current user (for example,
+attached providers, display name, and so on).
+                  
+</dd>
+        <dt id="sendEmailVerification" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/sendEmailVerification.html">sendEmailVerification</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Initiates email verification for the user.
+                  
+</dd>
+        <dt id="toString" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/toString.html">toString</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; <a href="dart-core/String-class.html">String</a></span>
+          </span>
+                  </dt>
+        <dd>
+          Returns a string representation of this object.
+                  <div class="features">override</div>
+</dd>
+        <dt id="unlinkFromProvider" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/unlinkFromProvider.html">unlinkFromProvider</a></span><span class="signature">(<wbr><span class="parameter" id="unlinkFromProvider-param-provider"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">provider</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Detaches the <code>provider</code> account from the current user. <a href="controllers_auth_controller/FirebaseUser/unlinkFromProvider.html">[...]</a>
+                  
+</dd>
+        <dt id="updateEmail" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/updateEmail.html">updateEmail</a></span><span class="signature">(<wbr><span class="parameter" id="updateEmail-param-email"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Updates the email address of the user. <a href="controllers_auth_controller/FirebaseUser/updateEmail.html">[...]</a>
+                  
+</dd>
+        <dt id="updatePassword" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/updatePassword.html">updatePassword</a></span><span class="signature">(<wbr><span class="parameter" id="updatePassword-param-password"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Updates the password of the user. <a href="controllers_auth_controller/FirebaseUser/updatePassword.html">[...]</a>
+                  
+</dd>
+        <dt id="updatePhoneNumberCredential" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/updatePhoneNumberCredential.html">updatePhoneNumberCredential</a></span><span class="signature">(<wbr><span class="parameter" id="updatePhoneNumberCredential-param-credential"><span class="type-annotation"><a href="controllers_auth_controller/AuthCredential-class.html">AuthCredential</a></span> <span class="parameter-name">credential</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Updates the phone number of the user. <a href="controllers_auth_controller/FirebaseUser/updatePhoneNumberCredential.html">[...]</a>
+                  
+</dd>
+        <dt id="updateProfile" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseUser/updateProfile.html">updateProfile</a></span><span class="signature">(<wbr><span class="parameter" id="updateProfile-param-userUpdateInfo"><span class="type-annotation"><a href="controllers_auth_controller/UserUpdateInfo-class.html">UserUpdateInfo</a></span> <span class="parameter-name">userUpdateInfo</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Updates the user profile information. <a href="controllers_auth_controller/FirebaseUser/updateProfile.html">[...]</a>
+                  
+</dd>
+        <dt id="noSuchMethod" class="callable inherited">
+          <span class="name"><a href="dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Invoked when a non-existent method or property is accessed. <a href="dart-core/Object/noSuchMethod.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor inherited" id="operators">
+      <h2>Operators</h2>
+      <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+          <span class="name"><a href="dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation">dynamic</span> <span class="parameter-name">other</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          The equality operator. <a href="dart-core/Object/operator_equals.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+    <ol>
+    
+    
+      <li class="section-title">
+        <a href="controllers_auth_controller/FirebaseUser-class.html#instance-properties">Properties</a>
+      </li>
+      <li><a href="controllers_auth_controller/FirebaseUser/isAnonymous.html">isAnonymous</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/isEmailVerified.html">isEmailVerified</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/metadata.html">metadata</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/providerData.html">providerData</a></li>
+      <li class="inherited"><a href="controllers_auth_controller/UserInfo/displayName.html">displayName</a></li>
+      <li class="inherited"><a href="controllers_auth_controller/UserInfo/email.html">email</a></li>
+      <li class="inherited"><a href="dart-core/Object/hashCode.html">hashCode</a></li>
+      <li class="inherited"><a href="controllers_auth_controller/UserInfo/phoneNumber.html">phoneNumber</a></li>
+      <li class="inherited"><a href="controllers_auth_controller/UserInfo/photoUrl.html">photoUrl</a></li>
+      <li class="inherited"><a href="controllers_auth_controller/UserInfo/providerId.html">providerId</a></li>
+      <li class="inherited"><a href="dart-core/Object/runtimeType.html">runtimeType</a></li>
+      <li class="inherited"><a href="controllers_auth_controller/UserInfo/uid.html">uid</a></li>
+    
+      <li class="section-title"><a href="controllers_auth_controller/FirebaseUser-class.html#instance-methods">Methods</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/delete.html">delete</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/getIdToken.html">getIdToken</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/linkWithCredential.html">linkWithCredential</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/reauthenticateWithCredential.html">reauthenticateWithCredential</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/reload.html">reload</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/sendEmailVerification.html">sendEmailVerification</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/toString.html">toString</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/unlinkFromProvider.html">unlinkFromProvider</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/updateEmail.html">updateEmail</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/updatePassword.html">updatePassword</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/updatePhoneNumberCredential.html">updatePhoneNumberCredential</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser/updateProfile.html">updateProfile</a></li>
+      <li class="inherited"><a href="dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    
+      <li class="section-title inherited"><a href="controllers_auth_controller/FirebaseUser-class.html#operators">Operators</a></li>
+      <li class="inherited"><a href="dart-core/Object/operator_equals.html">operator ==</a></li>
+    
+    
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    my_events
+      1.0.0+1
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>

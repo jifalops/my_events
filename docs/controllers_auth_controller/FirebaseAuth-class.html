@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the FirebaseAuth class from the auth_controller library, for the Dart programming language.">
+  <title>FirebaseAuth class - auth_controller library - Dart API</title>
+  <!-- required because all the links are pseudo-absolute -->
+  <base href="..">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+  <!-- header placeholder -->
+</head>
+
+<body>
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="index.html">my_events</a></li>
+    <li><a href="controllers_auth_controller/controllers_auth_controller-library.html">auth_controller</a></li>
+    <li class="self-crumb">FirebaseAuth class</li>
+  </ol>
+  <div class="self-name">FirebaseAuth</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li><a href="index.html">my_events</a></li>
+      <li><a href="controllers_auth_controller/controllers_auth_controller-library.html">auth_controller</a></li>
+      <li class="self-crumb">FirebaseAuth class</li>
+    </ol>
+    
+    <h5>auth_controller library</h5>
+    <ol>
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#classes">Classes</a></li>
+      <li><a href="controllers_auth_controller/AdditionalUserInfo-class.html">AdditionalUserInfo</a></li>
+      <li><a href="controllers_auth_controller/AuthCredential-class.html">AuthCredential</a></li>
+      <li><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></li>
+      <li><a href="controllers_auth_controller/EmailAuthProvider-class.html">EmailAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/FacebookAuthProvider-class.html">FacebookAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth-class.html">FirebaseAuth</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUser-class.html">FirebaseUser</a></li>
+      <li><a href="controllers_auth_controller/FirebaseUserMetadata-class.html">FirebaseUserMetadata</a></li>
+      <li><a href="controllers_auth_controller/GithubAuthProvider-class.html">GithubAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/GoogleAuthProvider-class.html">GoogleAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/IdTokenResult-class.html">IdTokenResult</a></li>
+      <li><a href="controllers_auth_controller/OAuthProvider-class.html">OAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/PhoneAuthProvider-class.html">PhoneAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/TwitterAuthProvider-class.html">TwitterAuthProvider</a></li>
+      <li><a href="controllers_auth_controller/UserInfo-class.html">UserInfo</a></li>
+      <li><a href="controllers_auth_controller/UserUpdateInfo-class.html">UserUpdateInfo</a></li>
+    
+    
+    
+    
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#properties">Properties</a></li>
+      <li><a href="controllers_auth_controller/auth.html">auth</a></li>
+    
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#functions">Functions</a></li>
+      <li><a href="controllers_auth_controller/signInWithGoogle.html">signInWithGoogle</a></li>
+      <li><a href="controllers_auth_controller/signOut.html">signOut</a></li>
+    
+    
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#typedefs">Typedefs</a></li>
+      <li><a href="controllers_auth_controller/PhoneCodeAutoRetrievalTimeout.html">PhoneCodeAutoRetrievalTimeout</a></li>
+      <li><a href="controllers_auth_controller/PhoneCodeSent.html">PhoneCodeSent</a></li>
+      <li><a href="controllers_auth_controller/PhoneVerificationCompleted.html">PhoneVerificationCompleted</a></li>
+      <li><a href="controllers_auth_controller/PhoneVerificationFailed.html">PhoneVerificationFailed</a></li>
+    
+      <li class="section-title"><a href="controllers_auth_controller/controllers_auth_controller-library.html#exceptions">Exceptions</a></li>
+      <li><a href="controllers_auth_controller/AuthException-class.html">AuthException</a></li>
+    </ol>
+  </div>
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <div><h1><span class="kind-class">FirebaseAuth</span> class </h1></div>
+
+    <section class="desc markdown">
+      <p>The entry point of the Firebase Authentication SDK.</p>
+    </section>
+    
+
+    <section class="summary offset-anchor" id="constructors">
+      <h2>Constructors</h2>
+
+      <dl class="constructor-summary-list">
+        <dt id="FirebaseAuth.fromApp" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/FirebaseAuth.fromApp.html">FirebaseAuth.fromApp</a></span><span class="signature">(<span class="parameter" id="fromApp-param-app"><span class="type-annotation">FirebaseApp</span> <span class="parameter-name">app</span></span>)</span>
+        </dt>
+        <dd>
+          Provides an instance of this class corresponding to <code>app</code>.
+          <div class="constructor-modifier features">factory</div>
+        </dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="app" class="property">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/app.html">app</a></span>
+          <span class="signature">&#8594; FirebaseApp</span>         
+        </dt>
+        <dd>
+          
+                  <div class="features">final</div>
+</dd>
+        <dt id="onAuthStateChanged" class="property">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/onAuthStateChanged.html">onAuthStateChanged</a></span>
+          <span class="signature">&#8594; <a href="dart-async/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/FirebaseUser-class.html">FirebaseUser</a></span>&gt;</span></span>         
+        </dt>
+        <dd>
+          Receive <a href="controllers_auth_controller/FirebaseUser-class.html">FirebaseUser</a> each time the user signIn or signOut
+                  <div class="features">read-only</div>
+</dd>
+        <dt id="hashCode" class="property inherited">
+          <span class="name"><a href="dart-core/Object/hashCode.html">hashCode</a></span>
+          <span class="signature">&#8594; <a href="dart-core/int-class.html">int</a></span>         
+        </dt>
+        <dd class="inherited">
+          The hash code for this object. <a href="dart-core/Object/hashCode.html">[...]</a>
+                  <div class="features">read-only, inherited</div>
+</dd>
+        <dt id="runtimeType" class="property inherited">
+          <span class="name"><a href="dart-core/Object/runtimeType.html">runtimeType</a></span>
+          <span class="signature">&#8594; <a href="dart-core/Type-class.html">Type</a></span>         
+        </dt>
+        <dd class="inherited">
+          A representation of the runtime type of the object.
+                  <div class="features">read-only, inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="instance-methods">
+      <h2>Methods</h2>
+      <dl class="callables">
+        <dt id="confirmPasswordReset" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/confirmPasswordReset.html">confirmPasswordReset</a></span><span class="signature">(<wbr><span class="parameter" id="confirmPasswordReset-param-oobCode"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">oobCode</span></span> <span class="parameter" id="confirmPasswordReset-param-newPassword"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">newPassword</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Completes the password reset process, given a confirmation code and new password. <a href="controllers_auth_controller/FirebaseAuth/confirmPasswordReset.html">[...]</a>
+                  
+</dd>
+        <dt id="createUserWithEmailAndPassword" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/createUserWithEmailAndPassword.html">createUserWithEmailAndPassword</a></span><span class="signature">(<wbr>{<span class="parameter" id="createUserWithEmailAndPassword-param-email"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span></span> <span class="parameter" id="createUserWithEmailAndPassword-param-password"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Tries to create a new user account with the given email address and password. <a href="controllers_auth_controller/FirebaseAuth/createUserWithEmailAndPassword.html">[...]</a>
+                  
+</dd>
+        <dt id="currentUser" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/currentUser.html">currentUser</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/FirebaseUser-class.html">FirebaseUser</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Returns the currently signed-in <a href="controllers_auth_controller/FirebaseUser-class.html">FirebaseUser</a> or <code>null</code> if there is none.
+                  
+</dd>
+        <dt id="fetchSignInMethodsForEmail" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/fetchSignInMethodsForEmail.html">fetchSignInMethodsForEmail</a></span><span class="signature">(<wbr>{<span class="parameter" id="fetchSignInMethodsForEmail-param-email"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/String-class.html">String</a></span>&gt;</span></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Returns a list of sign-in methods that can be used to sign in a given
+user (identified by its main email address). <a href="controllers_auth_controller/FirebaseAuth/fetchSignInMethodsForEmail.html">[...]</a>
+                  
+</dd>
+        <dt id="isSignInWithEmailLink" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/isSignInWithEmailLink.html">isSignInWithEmailLink</a></span><span class="signature">(<wbr><span class="parameter" id="isSignInWithEmailLink-param-link"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">link</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="dart-core/bool-class.html">bool</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Checks if link is an email sign-in link.
+                  
+</dd>
+        <dt id="sendPasswordResetEmail" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/sendPasswordResetEmail.html">sendPasswordResetEmail</a></span><span class="signature">(<wbr>{<span class="parameter" id="sendPasswordResetEmail-param-email"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Triggers the Firebase Authentication backend to send a password-reset
+email to the given email address, which must correspond to an existing
+user of your app. <a href="controllers_auth_controller/FirebaseAuth/sendPasswordResetEmail.html">[...]</a>
+                  
+</dd>
+        <dt id="sendSignInWithEmailLink" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/sendSignInWithEmailLink.html">sendSignInWithEmailLink</a></span><span class="signature">(<wbr>{<span class="parameter" id="sendSignInWithEmailLink-param-email"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span></span> <span class="parameter" id="sendSignInWithEmailLink-param-url"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">url</span></span> <span class="parameter" id="sendSignInWithEmailLink-param-handleCodeInApp"><span class="type-annotation"><a href="dart-core/bool-class.html">bool</a></span> <span class="parameter-name">handleCodeInApp</span>, </span> <span class="parameter" id="sendSignInWithEmailLink-param-iOSBundleID"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">iOSBundleID</span></span> <span class="parameter" id="sendSignInWithEmailLink-param-androidPackageName"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">androidPackageName</span></span> <span class="parameter" id="sendSignInWithEmailLink-param-androidInstallIfNotAvailable"><span class="type-annotation"><a href="dart-core/bool-class.html">bool</a></span> <span class="parameter-name">androidInstallIfNotAvailable</span>, </span> <span class="parameter" id="sendSignInWithEmailLink-param-androidMinimumVersion"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">androidMinimumVersion</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Sends a sign in with email link to provided email address.
+                  
+</dd>
+        <dt id="setLanguageCode" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/setLanguageCode.html">setLanguageCode</a></span><span class="signature">(<wbr><span class="parameter" id="setLanguageCode-param-language"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">language</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Sets the user-facing language code for auth operations that can be
+internationalized, such as <code>sendEmailVerification</code>. This language
+code should follow the conventions defined by the IETF in BCP47.
+                  
+</dd>
+        <dt id="signInAnonymously" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/signInAnonymously.html">signInAnonymously</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Asynchronously creates and becomes an anonymous user. <a href="controllers_auth_controller/FirebaseAuth/signInAnonymously.html">[...]</a>
+                  
+</dd>
+        <dt id="signInWithCredential" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/signInWithCredential.html">signInWithCredential</a></span><span class="signature">(<wbr><span class="parameter" id="signInWithCredential-param-credential"><span class="type-annotation"><a href="controllers_auth_controller/AuthCredential-class.html">AuthCredential</a></span> <span class="parameter-name">credential</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Asynchronously signs in to Firebase with the given 3rd-party credentials
+(e.g. a Facebook login Access Token, a Google ID Token/Access Token pair,
+etc.) and returns additional identity provider data. <a href="controllers_auth_controller/FirebaseAuth/signInWithCredential.html">[...]</a>
+                  
+</dd>
+        <dt id="signInWithCustomToken" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/signInWithCustomToken.html">signInWithCustomToken</a></span><span class="signature">(<wbr>{<span class="parameter" id="signInWithCustomToken-param-token"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">token</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Tries to sign in a user with a given Custom Token <code>token</code>. <a href="controllers_auth_controller/FirebaseAuth/signInWithCustomToken.html">[...]</a>
+                  
+</dd>
+        <dt id="signInWithEmailAndLink" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/signInWithEmailAndLink.html">signInWithEmailAndLink</a></span><span class="signature">(<wbr>{<span class="parameter" id="signInWithEmailAndLink-param-email"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span></span> <span class="parameter" id="signInWithEmailAndLink-param-link"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">link</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Signs in using an email address and email sign-in link. <a href="controllers_auth_controller/FirebaseAuth/signInWithEmailAndLink.html">[...]</a>
+                  
+</dd>
+        <dt id="signInWithEmailAndPassword" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/signInWithEmailAndPassword.html">signInWithEmailAndPassword</a></span><span class="signature">(<wbr>{<span class="parameter" id="signInWithEmailAndPassword-param-email"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span></span> <span class="parameter" id="signInWithEmailAndPassword-param-password"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="controllers_auth_controller/AuthResult-class.html">AuthResult</a></span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Tries to sign in a user with the given email address and password. <a href="controllers_auth_controller/FirebaseAuth/signInWithEmailAndPassword.html">[...]</a>
+                  
+</dd>
+        <dt id="signOut" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/signOut.html">signOut</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Signs out the current user and clears it from the disk cache. <a href="controllers_auth_controller/FirebaseAuth/signOut.html">[...]</a>
+                  
+</dd>
+        <dt id="verifyPhoneNumber" class="callable">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/verifyPhoneNumber.html">verifyPhoneNumber</a></span><span class="signature">(<wbr>{<span class="parameter" id="verifyPhoneNumber-param-phoneNumber"><span class="type-annotation"><a href="dart-core/String-class.html">String</a></span> <span class="parameter-name">phoneNumber</span>, </span> <span class="parameter" id="verifyPhoneNumber-param-timeout"><span class="type-annotation"><a href="dart-core/Duration-class.html">Duration</a></span> <span class="parameter-name">timeout</span>, </span> <span class="parameter" id="verifyPhoneNumber-param-forceResendingToken"><span class="type-annotation"><a href="dart-core/int-class.html">int</a></span> <span class="parameter-name">forceResendingToken</span>, </span> <span class="parameter" id="verifyPhoneNumber-param-verificationCompleted"><span class="type-annotation"><a href="controllers_auth_controller/PhoneVerificationCompleted.html">PhoneVerificationCompleted</a></span> <span class="parameter-name">verificationCompleted</span>, </span> <span class="parameter" id="verifyPhoneNumber-param-verificationFailed"><span class="type-annotation"><a href="controllers_auth_controller/PhoneVerificationFailed.html">PhoneVerificationFailed</a></span> <span class="parameter-name">verificationFailed</span>, </span> <span class="parameter" id="verifyPhoneNumber-param-codeSent"><span class="type-annotation"><a href="controllers_auth_controller/PhoneCodeSent.html">PhoneCodeSent</a></span> <span class="parameter-name">codeSent</span>, </span> <span class="parameter" id="verifyPhoneNumber-param-codeAutoRetrievalTimeout"><span class="type-annotation"><a href="controllers_auth_controller/PhoneCodeAutoRetrievalTimeout.html">PhoneCodeAutoRetrievalTimeout</a></span> <span class="parameter-name">codeAutoRetrievalTimeout</span></span> })
+            <span class="returntype parameter">&#8594; <a href="dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+          </span>
+                  </dt>
+        <dd>
+          Starts the phone number verification process for the given phone number. <a href="controllers_auth_controller/FirebaseAuth/verifyPhoneNumber.html">[...]</a>
+                  
+</dd>
+        <dt id="noSuchMethod" class="callable inherited">
+          <span class="name"><a href="dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+            <span class="returntype parameter">&#8594; dynamic</span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Invoked when a non-existent method or property is accessed. <a href="dart-core/Object/noSuchMethod.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+        <dt id="toString" class="callable inherited">
+          <span class="name"><a href="dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+            <span class="returntype parameter">&#8594; <a href="dart-core/String-class.html">String</a></span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          Returns a string representation of this object.
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor inherited" id="operators">
+      <h2>Operators</h2>
+      <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+          <span class="name"><a href="dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation">dynamic</span> <span class="parameter-name">other</span></span>)
+            <span class="returntype parameter">&#8594; <a href="dart-core/bool-class.html">bool</a></span>
+          </span>
+                  </dt>
+        <dd class="inherited">
+          The equality operator. <a href="dart-core/Object/operator_equals.html">[...]</a>
+                  <div class="features">inherited</div>
+</dd>
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="static-properties">
+      <h2>Static Properties</h2>
+
+      <dl class="properties">
+        <dt id="instance" class="property">
+          <span class="name"><a href="controllers_auth_controller/FirebaseAuth/instance.html">instance</a></span>
+          <span class="signature">&#8594; <a href="controllers_auth_controller/FirebaseAuth-class.html">FirebaseAuth</a></span>         
+        </dt>
+        <dd>
+          Provides an instance of this class corresponding to the default app.
+                  <div class="features">final</div>
+</dd>
+      </dl>
+    </section>
+
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+    <ol>
+    
+      <li class="section-title"><a href="controllers_auth_controller/FirebaseAuth-class.html#constructors">Constructors</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/FirebaseAuth.fromApp.html">fromApp</a></li>
+    
+      <li class="section-title">
+        <a href="controllers_auth_controller/FirebaseAuth-class.html#instance-properties">Properties</a>
+      </li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/app.html">app</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/onAuthStateChanged.html">onAuthStateChanged</a></li>
+      <li class="inherited"><a href="dart-core/Object/hashCode.html">hashCode</a></li>
+      <li class="inherited"><a href="dart-core/Object/runtimeType.html">runtimeType</a></li>
+    
+      <li class="section-title"><a href="controllers_auth_controller/FirebaseAuth-class.html#instance-methods">Methods</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/confirmPasswordReset.html">confirmPasswordReset</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/createUserWithEmailAndPassword.html">createUserWithEmailAndPassword</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/currentUser.html">currentUser</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/fetchSignInMethodsForEmail.html">fetchSignInMethodsForEmail</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/isSignInWithEmailLink.html">isSignInWithEmailLink</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/sendPasswordResetEmail.html">sendPasswordResetEmail</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/sendSignInWithEmailLink.html">sendSignInWithEmailLink</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/setLanguageCode.html">setLanguageCode</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/signInAnonymously.html">signInAnonymously</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/signInWithCredential.html">signInWithCredential</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/signInWithCustomToken.html">signInWithCustomToken</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/signInWithEmailAndLink.html">signInWithEmailAndLink</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/signInWithEmailAndPassword.html">signInWithEmailAndPassword</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/signOut.html">signOut</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/verifyPhoneNumber.html">verifyPhoneNumber</a></li>
+      <li class="inherited"><a href="dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+      <li class="inherited"><a href="dart-core/Object/toString.html">toString</a></li>
+    
+      <li class="section-title inherited"><a href="controllers_auth_controller/FirebaseAuth-class.html#operators">Operators</a></li>
+      <li class="inherited"><a href="dart-core/Object/operator_equals.html">operator ==</a></li>
+    
+      <li class="section-title"><a href="controllers_auth_controller/FirebaseAuth-class.html#static-properties">Static properties</a></li>
+      <li><a href="controllers_auth_controller/FirebaseAuth/instance.html">instance</a></li>
+    
+    
+    
+    </ol>
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    my_events
+      1.0.0+1
+  </span>
+
+  <!-- footer-text placeholder -->
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+<!-- footer placeholder -->
+
+</body>
+
+</html>
